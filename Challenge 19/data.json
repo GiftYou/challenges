@@ -1,0 +1,26 @@
+[
+   {
+      "ID": 3,
+      "String": "myuu",
+      "Integer": "32",
+      "Float": "sd3322",
+      "Date": "1977-11-12",
+      "Boolean": "Choose..."
+   },
+   {
+      "ID": 2,
+      "String": "connor",
+      "Integer": "12",
+      "Float": "ddf089",
+      "Date": "4322-12-31",
+      "Boolean": "true"
+   },
+   {
+      "ID": 4,
+      "String": "altair",
+      "Integer": "14",
+      "Float": "sd332",
+      "Date": "2342-12-31",
+      "Boolean": "false"
+   }
+]

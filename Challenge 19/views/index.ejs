@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>bread</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
+    </head>
+    <body>
+    <div style="margin-left: 100px; margin-top: 20px;">
+        <h1>BREAD etc</h1>
+
+        <form method="POST" action="/search">
+        <div class="form-group row">
+          <label for="staticEmail" class="col-sm-2 col-form-label">ID</label>
+          <div class="col-sm-8">
+            <input type="number" class="form-control" id="inputPassword" >
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="staticEmail" class="col-sm-2 col-form-label">String</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="inputPassword" >
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="staticEmail" class="col-sm-2 col-form-label">Integer</label>
+          <div class="col-sm-8">
+            <input type="number" class="form-control" id="inputPassword" >
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="staticEmail" class="col-sm-2 col-form-label">Float</label>
+          <div class="col-sm-8">
+            <input type="number" class="form-control" id="Float" >
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary">search</button>
+        </form>
+        <br>
+        <form method="POST" action="/add">
+          <button type="submit" class="btn btn-primary">this are add</button>
+        </form>
+        <table class="table">
+        <thead>
+            <th scope="col">no</th>
+            <th scope="col">String</th>
+            <th scope="col">Integer</th>
+            <th scope="col">Float</th>
+            <th scope="col">Dates</th>
+            <th scope="col">Boolean</th>
+            </tr>
+        </thead>
+        <% for( ii = 0; ii < data.length; ii++){ %>
+        <thead>
+            <th scope="col"><%=ii + 1%></th>
+            <th scope="col"><%=data[ii].String %></th>
+            <th scope="col"><%=data[ii].Integer %></th>
+            <th scope="col"><%=data[ii].Float %></th>
+            <th scope="col"><%=data[ii].Date %></th>
+            <th scope="col"><%=data[ii].Boolean %></th>
+            <th scope="col form-inline">
+              <a href="/delete/<%=ii%>"><button type="button" href="edit" class="btn btn-primary asd">delete</button></a>
+              <a href="/edit/<%=ii%>"><button type="button" href="edit" class="btn btn-primary asd">edit</button></a>
+            </th>
+        </thead>
+        <% } %>
+    </div>
+    </body>
+</html>
