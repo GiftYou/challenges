@@ -1,0 +1,226 @@
+
+C:\Users\Saturnux\Documents\javascript>cd "Challenge 14"
+
+C:\Users\Saturnux\Documents\javascript\Challenge 14>sqlite3
+SQLite version 3.27.2 2019-02-25 16:06:06
+Enter ".help" for usage hints.
+Connected to a transient in-memory database.
+Use ".open FILENAME" to reopen on a persistent database.
+sqlite> .show databases;
+Usage: .show
+sqlite> .databases
+main:
+sqlite> .open tes
+sqlite> .schema
+sqlite> .tables
+sqlite> .show tables
+Usage: .show
+sqlite>
+sqlite> .databases
+main: C:\Users\Saturnux\Documents\javascript\Challenge 14\tes
+sqlite> .show tes
+Usage: .show
+sqlite> .open tes
+sqlite> .schema COMPANY
+sqlite> .show COMPANY
+Usage: .show
+sqlite> .schema COMPANY
+sqlite> .schema tes
+sqlite> .open tes
+sqlite> .schema tes
+sqlite> .schema COMPANY
+sqlite> CREATE TABLE COMPANY(
+   ...>    ID INT PRIMARY KEY     NOT NULL,
+   ...>    NAME           TEXT    NOT NULL
+   ...> );
+sqlite> .schema COMPANY
+CREATE TABLE COMPANY(
+   ID INT PRIMARY KEY     NOT NULL,
+   NAME           TEXT    NOT NULL
+);
+sqlite> .show COMPANY
+Usage: .show
+sqlite> INSERT INTO COMPANY VALUES ( , sasuke);
+Error: near ",": syntax error
+sqlite> INSERT INTO COMPANY VALUES (null , sasuke);
+Error: no such column: sasuke
+sqlite> asd
+   ...> asd
+   ...> asd
+   ...> asd
+   ...> asd
+   ...> asd
+   ...> exit
+   ...> .exit
+   ...> .exit
+   ...> clear
+   ...> CREATE TABLE COMPANY(
+   ...>    ID INT PRIMARY KEY     NOT NULL,
+   ...>    NAME           TEXT    NOT NULL
+   ...> );
+Error: near "asd": syntax error
+sqlite>
+sqlite> INSERT INTO COMPANY (ID, NAME) VALUES ( , sasuke);
+Error: near ",": syntax error
+sqlite> INSERT INTO COMPANY (ID, NAME) VALUES (null , sasuke);
+Error: no such column: sasuke
+sqlite> INSERT INTO COMPANY (, sasuke) VALUES (ID , NAME);
+Error: near ",": syntax error
+sqlite> INSERT INTO COMPANY ( null, sasuke) VALUES (ID , NAME);
+Error: near "null": syntax error
+sqlite> INSERT INTO COMPANY (null, sasuke) VALUES (ID , NAME);
+Error: near "null": syntax error
+sqlite> INSERT INTO COMPANY (ID, NAME) VALUES (null , sasuke);
+Error: no such column: sasuke
+sqlite> INSERT INTO COMPANY VALUES ( , NAME= sasuke);
+Error: near ",": syntax error
+sqlite> INSERT INTO COMPANY VALUES (ID= , NAME= sasuke);
+Error: near ",": syntax error
+sqlite> INSERT INTO COMPANY VALUES ( , 'sasuke');
+Error: near ",": syntax error
+sqlite> INSERT INTO COMPANY VALUES (null , 'sasuke');
+Error: NOT NULL constraint failed: COMPANY.ID
+sqlite> INSERT INTO COMPANY VALUES (1 , 'sasuke');
+sqlite> select * from COMPANY
+   ...> ;
+1|sasuke
+sqlite> .schema
+CREATE TABLE COMPANY(
+   ID INT PRIMARY KEY     NOT NULL,
+   NAME           TEXT    NOT NULL
+);
+sqlite> drop table COMPANY
+   ...> ;
+sqlite> .schema
+sqlite> databases;
+Error: near "databases": syntax error
+sqlite> .databases
+main: C:\Users\Saturnux\Documents\javascript\Challenge 14\tes
+sqlite> .databases
+main: C:\Users\Saturnux\Documents\javascript\Challenge 14\tes
+sqlite> exit
+   ...> ;
+Error: near "exit": syntax error
+sqlite> .exit
+
+C:\Users\Saturnux\Documents\javascript\Challenge 14>dir
+ Volume in drive C has no label.
+ Volume Serial Number is DC1F-2890
+
+ Directory of C:\Users\Saturnux\Documents\javascript\Challenge 14
+
+25/03/2019  10:55    <DIR>          .
+25/03/2019  10:55    <DIR>          ..
+24/03/2019  17:59                 0 create.js
+25/03/2019  10:37            12.288 tes
+               2 File(s)         12.288 bytes
+               2 Dir(s)  225.692.389.376 bytes free
+
+C:\Users\Saturnux\Documents\javascript\Challenge 14>del tes
+
+C:\Users\Saturnux\Documents\javascript\Challenge 14>dir
+ Volume in drive C has no label.
+ Volume Serial Number is DC1F-2890
+
+ Directory of C:\Users\Saturnux\Documents\javascript\Challenge 14
+
+25/03/2019  10:56    <DIR>          .
+25/03/2019  10:56    <DIR>          ..
+24/03/2019  17:59                 0 create.js
+               1 File(s)              0 bytes
+               2 Dir(s)  225.692.401.664 bytes free
+
+C:\Users\Saturnux\Documents\javascript\Challenge 14>sqlite3
+SQLite version 3.27.2 2019-02-25 16:06:06
+Enter ".help" for usage hints.
+Connected to a transient in-memory database.
+Use ".open FILENAME" to reopen on a persistent database.
+sqlite> University.db
+   ...> ;
+Error: near "University": syntax error
+sqlite> .exit
+
+C:\Users\Saturnux\Documents\javascript\Challenge 14>sqlite University.db
+'sqlite' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Saturnux\Documents\javascript\Challenge 14>sqlite3 University.db
+SQLite version 3.27.2 2019-02-25 16:06:06
+Enter ".help" for usage hints.
+sqlite> .databases
+main: C:\Users\Saturnux\Documents\javascript\Challenge 14\University.db
+sqlite> .databases
+main: C:\Users\Saturnux\Documents\javascript\Challenge 14\University.db
+sqlite> CREATE TABLE mahasiswa(nim id PRIMARY KEY,
+   ...> ;
+Error: near ";": syntax error
+sqlite> .schema
+sqlite> CREATE TABLE mahasiswa(nim id PRIMARY KEY,
+   ...> asd);
+sqlite> .schema
+CREATE TABLE mahasiswa(nim id PRIMARY KEY,
+asd);
+sqlite> DROP mahasiswa
+   ...> ;
+Error: near "mahasiswa": syntax error
+sqlite> .DROP mahasiswa
+Error: unknown command or invalid arguments:  "DROP". Enter ".help" for help
+sqlite> DROP TABLE mahasiswa
+   ...> ;
+sqlite> .schema
+sqlite> CREATE TABLE mahasiswa(nim INT PRIMARY KEY,
+   ...> nama VARCHAR(250),
+   ...> alamat VARCHAR(100),
+   ...> jurusan VARCHAR(100);
+Error: near ";": syntax error
+sqlite> CREATE TABLE mahasiswa(nim INT PRIMARY KEY,
+   ...> nama VARCHAR(250),
+   ...> alamat VARCHAR(100),
+   ...> jurusan VARCHAR(100));
+sqlite> .schema
+CREATE TABLE mahasiswa(nim INT PRIMARY KEY,
+nama VARCHAR(250),
+alamat VARCHAR(100),
+jurusan VARCHAR(100));
+sqlite> CREATE TABLE jurusan(kode_ju INT PRIMARY KEY,
+   ...> nama_jurusan);
+sqlite> .schema
+CREATE TABLE mahasiswa(nim INT PRIMARY KEY,
+nama VARCHAR(250),
+alamat VARCHAR(100),
+jurusan VARCHAR(100));
+CREATE TABLE jurusan(kode_ju INT PRIMARY KEY,
+nama_jurusan);
+sqlite> CREATE TABLE matakuliah(kode_mk INT PRIMARY KEY,
+   ...> nama ;
+Error: near ";": syntax error
+sqlite> .schema
+CREATE TABLE mahasiswa(nim INT PRIMARY KEY,
+nama VARCHAR(250),
+alamat VARCHAR(100),
+jurusan VARCHAR(100));
+CREATE TABLE jurusan(kode_ju INT PRIMARY KEY,
+nama_jurusan);
+sqlite> DROP TABLE jurusan;
+sqlite> .schema
+CREATE TABLE mahasiswa(nim INT PRIMARY KEY,
+nama VARCHAR(250),
+alamat VARCHAR(100),
+jurusan VARCHAR(100));
+sqlite> CREATE TABLE jurusan(kode_ju INT PRIMARY KEY,
+   ...> nama_jurusan VARCHAR(100));
+sqlite> .schema
+CREATE TABLE mahasiswa(nim INT PRIMARY KEY,
+nama VARCHAR(250),
+alamat VARCHAR(100),
+jurusan VARCHAR(100));
+CREATE TABLE jurusan(kode_ju INT PRIMARY KEY,
+nama_jurusan VARCHAR(100));
+sqlite> .schema
+CREATE TABLE mahasiswa(nim INT PRIMARY KEY,
+nama VARCHAR(250),
+alamat VARCHAR(100),
+jurusan VARCHAR(100));
+CREATE TABLE jurusan(kode_ju INT PRIMARY KEY,
+nama_jurusan VARCHAR(100));
+sqlite>
