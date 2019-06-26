@@ -1,0 +1,37 @@
+[
+    {
+        "data": "vue ",
+        "status": false,
+        "tags": [
+            "vueT",
+            "kaka"
+        ]
+    },
+    {
+        "data": "js ",
+        "status": true,
+        "tags": [
+            "jsTe",
+            "asd",
+            "kaka",
+            "asd"
+        ]
+    },
+    {
+        "data": "c# ",
+        "status": false,
+        "tags": [
+            "c#T"
+        ]
+    },
+    {
+        "data": "python ",
+        "status": true,
+        "tags": []
+    },
+    {
+        "data": "saya mau pergi ke pasar ",
+        "status": false,
+        "tags": []
+    }
+]
