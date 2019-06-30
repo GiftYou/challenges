@@ -33,8 +33,8 @@ router.get('/', function(req, res, next){
     flek = true}
     if(req.query.CheckFLOAT != undefined){arr.push(`TEXT='${float}' `)
     flek = true}
-    if(req.query.CheckDATE != undefined){arr.push(`date<='${sdate}' `);
-    arr.push(`date>='${edate}' `)
+    if(req.query.CheckDATE != undefined){arr.push(`date>='${sdate}' `);
+    arr.push(`date<='${edate}' `)
     flek = true}
     if(req.query.CheckBOOLEAN != undefined){arr.push(`boolean='${boolean}' `)
     flek = true}
@@ -43,7 +43,6 @@ router.get('/', function(req, res, next){
     // for count all item in 'data' table
     let sql = `SELECT COUNT(*) AS total FROM data`;
     if(flek){
-        
         sql+= ` WHERE ${arr.join(' AND ')}`
     }
 
@@ -58,12 +57,10 @@ router.get('/', function(req, res, next){
 
         if(flek){
             sql+= " WHERE " + arr.join(" AND ");
-            url.page = '1';
         }
         sql+= ` LIMIT ${limit} OFFSET ${offset}`;
         db.all(sql, [], (err, row)=> {
-            url.page = '1'
-            console.log(url);
+            console.log(page);
             // url.concat('&page=1');
             if(err)throw err;
             res.render('index', {data: row, pages: pages, page: page, url});
