@@ -3,6 +3,14 @@ const fs = require('fs');
 const router = express.Router();
 const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('data.db');
+const window = function windo() {
+    let windoo = confirm("check this");
+    if(windo == true){
+        res.redirect('/');
+    }else{
+        res.redirect('/');
+    }
+}
 
 router.get('/', function(req, res, next){
     // which page are selected
@@ -39,7 +47,6 @@ router.get('/', function(req, res, next){
     if(req.query.CheckBOOLEAN != undefined){arr.push(`boolean='${boolean}' `)
     flek = true}
 
-
     // for count all item in 'data' table
     let sql = `SELECT COUNT(*) AS total FROM data`;
     if(flek){
@@ -50,7 +57,7 @@ router.get('/', function(req, res, next){
         //the result after getting count return an object
         let total = rows[0].total;
         let pages = Math.ceil(total / limit)
-        sql = "SELECT * FROM data";
+        sql = "SELECT * FROM data ";
         // if(arr.length > 0){
         //     sql+= ` LIMIT ${limit} OFFSET ${offset}`;
         // }
@@ -58,9 +65,8 @@ router.get('/', function(req, res, next){
         if(flek){
             sql+= " WHERE " + arr.join(" AND ");
         }
-        sql+= ` LIMIT ${limit} OFFSET ${offset}`;
+        sql+= ` ORDER BY id DESC LIMIT ${limit} OFFSET ${offset}`;
         db.all(sql, [], (err, row)=> {
-            console.log(page);
             // url.concat('&page=1');
             if(err)throw err;
             res.render('index', {data: row, pages: pages, page: page, url});
@@ -79,15 +85,17 @@ router.get('/test/:params1', function(req, res, next){
     
 
 router.get('/edit/:id', function(req, res, next){
-    db.all("SELECT * FROM data", function(err, row){
-
+    db.all(`SELECT * FROM data WHERE id = ${req.params.id}`, function(err, rows){
         console.log(req.params.id);
-        let dataa = row[req.params.id];
+        let dataa = rows[0];
         res.render('edit', {dataa})
     });
 });
 
 router.get('/delete/:id', function(req, res, next){
+
+    // let confrm = window.confirm("you sure?");
+    
     db.serialize(function() {
         let str = "DELETE FROM data WHERE id = ?";
         let stmt = db.prepare(str);
@@ -95,6 +103,7 @@ router.get('/delete/:id', function(req, res, next){
         stmt.finalize();
     });
     res.redirect('/');
+        
 });
 
 router.get('/search', function(req, res, next){
