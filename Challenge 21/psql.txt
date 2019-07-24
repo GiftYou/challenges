@@ -1,0 +1,21 @@
+sudo -u postgres psql
+\list
+\q
+\connect DBNAME
+\conninfo
+
+express --ejs "Challenge 21"
+sudo su postgres
+ALTER user postgres WITH password 'learnpgadmin';
+\q
+
+$ su root
+$ su postgres
+$ psql -h localhost
+> ALTER USER postgres with password 'YourNewPassword';
+
+sudo apt-get purge mongodb-org*
+
+sudo apt update
+sudo apt install -y mongodb
+sudo systemctl status mongodb
