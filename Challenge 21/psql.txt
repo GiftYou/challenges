@@ -14,8 +14,3 @@ $ su postgres
 $ psql -h localhost
 > ALTER USER postgres with password 'YourNewPassword';
 
-sudo apt-get purge mongodb-org*
-
-sudo apt update
-sudo apt install -y mongodb
-sudo systemctl status mongodb
