@@ -1,0 +1,25 @@
+https://askubuntu.com/questions/739297/how-to-install-robomongo-on-ubuntu/781793
+
+sudo apt-get purge mongodb-org*
+
+sudo apt update
+sudo apt install -y mongodb
+sudo systemctl status mongodb
+
+//--    fixed   --//
+wget https://download.robomongo.org/0.8.5/linux/robomongo-0.8.5-x86_64.deb
+
+sudo dpkg -i robomongo-0.8.5-x86_64.deb
+
+robomongo
+
+//--    if failed       --//
+https://askubuntu.com/questions/840257/e-package-libpng12-0-has-no-installation-candidate-ubuntu-16-10-gnome
+
+sudo nano /etc/apt/sources.list
+
+#### Manually Added sources
+## source for libpng12-0 package
+deb http://mirrors.kernel.org/ubuntu/ xenial main
+
+sudo apt-get install libpng12-0

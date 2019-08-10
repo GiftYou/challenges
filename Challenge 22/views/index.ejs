@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>bread</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript">
+        </script>
+        <script type="text/javascript">
+          function applyID(id){
+            // let conf = confirm(id);
+            // if(conf){
+            //   // location.href = `/delete/${id}`
+            //   alert(id);
+            //   }
+            //   else{alert("false")}
+            alert(id)
+          }
+         </script>
+    </head>
+    <body>
+    <div style="margin-left: 100px; margin-top: 20px;">
+        <h1>BREAD etc</h1>
+
+        <form method="GET" action="/">
+        <div class="form-group row">
+          <input type="checkbox" class="form-check-input" name="CheckID">
+          <label for="staticEmail" class="col-sm-2 col-form-label">ID</label>
+          <div class="col-sm-8">
+            <input type="number" class="form-control" id="inputPassword" name="ID" value="">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <input type="checkbox" class="form-check-input" name="CheckSTRING">
+          <label for="staticEmail" class="col-sm-2 col-form-label" >String</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="inputPassword" name="String"value="<%= arr2[1] %>">
+          </div>
+        </div>
+
+        <div class="form-group row" style="display: none;">
+          <div class="col-sm-8">
+            <input type="hidden" class="form-control" id="inputPassword" value="1" value="<%= arr2[2] %>" name="page">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <input type="checkbox" class="form-check-input" name="CheckINTEGER">
+          <label for="staticEmail" class="col-sm-2 col-form-label" name="CheckINTEGER">Integer</label>
+          <div class="col-sm-8">
+            <input type="number" class="form-control" id="inputPassword" name="Integer" value="<%= arr2[3] %>">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <input type="checkbox" class="form-check-input" name="CheckFLOAT">
+          <label for="staticEmail" class="col-sm-2 col-form-label" name="CheckFLOAT">Float</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="FLoat" name="Float" value="<%= arr2[3] %>">
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <input type="checkbox" class="form-check-input" name="CheckDATE">
+          <label for="staticEmail" class="col-sm-2 col-form-label">Date</label>
+          <div class="col-sm-8">
+            <input type="date" class="form-control" id="Date" name="sDate" >
+            <label for="staticEmail" class="col-sm-2 col-form-label">To</label>
+            <input type="date" class="form-control" id="Date" name="eDate" >
+          </div>
+        </div>
+
+        <div class="input-group row">
+          <input type="checkbox" class="form-check-input" name="CheckBOOLEAN">
+          <label for="staticEmail" class="col-sm-2 col-form-label" name="CheckBOOLEAN">Boolean</label>
+          <select class="form-control" id="inputGroupSelect02" name="Boolean" style="
+            margin-left: 20px; margin-right: 200px;
+          ">
+            <option selected value="Choose">Choose...</option>
+            <option value="true">true</option>
+            <option value="false">false</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">search</button>
+        </form>
+        <br>
+        
+        <div>
+        <table class="table">
+          <thead>
+            <th scope="col">no</th>
+            <th scope="col">String</th>
+            <th scope="col">Integer</th>
+            <th scope="col">Float</th>
+            <th scope="col">Dates</th>
+            <th scope="col">Boolean</th>
+            </tr>
+        </thead>
+        <%  data.forEach((item, nim) => { %>
+        <thead>
+            <th scope="col"><%=nim + 1%></th>
+            <th scope="col"><%=item.string %></th>
+            <th scope="col"><%=item.integer %></th>
+            <th scope="col"><%=item.float %></th>
+            <th scope="col"><%=item.date %></th>
+            <th scope="col"><%=item.boolean %></th>
+            <th scope="col form-inline">
+              <a href="/delete/<%=item._id%>"><button type="button" onclick="return confirm('you sure?');" class="btn btn-danger testclick">delete</button></a>
+              <a href="/edit/<%=item._id%>"><button type="button" href="edit" class="btn btn-primary asd">edit</button></a>
+            </th>
+        </thead>
+        <% }) %>  
+        </table>
+        </div>
+        <a href="/add"><button type="submit" class="btn btn-primary">add</button></a>
+
+        <div class="thisdiv">
+      
+        </div>
+
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li class="page-item"><a class="page-link" href="<%= url.replace(`page=${page}`, `page=${page - 1}`) %>">Previous</a></li>
+            <%for(let i = 1; i <= pages; i++){ %>
+            <li class="page-item <%= page == i ? 'active': '' %>"><a class="page-link" href="<%= url.replace(`page=${page}`, `page=${i}`); %>"><%= i %></a></li>
+            <%}%>
+            <li class="page-item"><a class="page-link" href="<%= url.replace(`page=${page}`, `page=${Number(page)+ 1}`) %>">Next</a></li>
+          </ul>
+        </nav>
+        
+    </div>        
+    </body>
+</html>

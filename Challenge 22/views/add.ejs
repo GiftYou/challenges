@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>add BREAD</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js">
+    </head>
+    <body>
+        <div style="margin-left: 100px; margin-top: 20px;">
+        <h1>BREAD etc</h1>
+
+        <form method="POST" action="/add">
+        <div class="form-group row">
+          <label for="staticEmail" class="col-sm-2 col-form-label">String</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="inputPassword" name="String" >
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="staticEmail" class="col-sm-2 col-form-label">Integer</label>
+          <div class="col-sm-8">
+            <input type="number" class="form-control" id="inputPassword" name="Integer" >
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="staticEmail" class="col-sm-2 col-form-label">Float</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" id="FLoat" name="Float" >
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="staticEmail" class="col-sm-2 col-form-label">Date</label>
+          <div class="col-sm-8">
+            <input type="date" class="form-control" id="Date" name="Date" >
+          </div>
+        </div>
+
+        <div class="input-group row">
+          <label for="staticEmail" class="col-sm-2 col-form-label">Float</label>
+          <select class="form-control" id="inputGroupSelect02" name="Boolean" style="
+            margin-left: 20px; margin-right: 200px;
+          ">
+            <option selected>Choose...</option>
+            <option value="true">true</option>
+            <option value="false">false</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">add</button>
+        </form>
+
+    </div>
+    </body>
+</html>
